@@ -13,6 +13,7 @@ namespace CodeFirstDemo
         static void Main(string[] args)
         {
             // Path to your Excel file
+            //get data from excel file
             string filePath = "D:\\Sohel vai\\Client.xlsx";
             List<Tuple<string, string, int, float>> dataList = new List<Tuple<string, string, int, float>>();
             // Check if the file exists
@@ -67,7 +68,30 @@ namespace CodeFirstDemo
                  
                 }
             }
+            /*
+            //insert data into a excel file;
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                // Add a new worksheet to the Excel package
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("test");//excel file named test
 
+                // Add some data to the worksheet
+                worksheet.Cells["A1"].Value = "Name";
+                worksheet.Cells["B1"].Value = "Age";
+
+                worksheet.Cells["A2"].Value = "John";
+                worksheet.Cells["B2"].Value = 30;
+
+                worksheet.Cells["A3"].Value = "Jane";
+                worksheet.Cells["B3"].Value = 25;
+
+                // Save the Excel package to a file
+                FileInfo excelFile = new FileInfo(@"D:\\Sohel vai\\test.xlsx");//location
+                excelPackage.SaveAs(excelFile);
+            }
+
+            Console.WriteLine("Excel file generated successfully!");
+            */
 
             Console.WriteLine(dataList.Count);
             // Retrieve connection string from app.config
